@@ -1,3 +1,13 @@
+/*
+1. Get a Blynk Account
+2. Download the Blynk App from your AppStore
+3. Set auth variable with that of your project
+4. Add a Terminal hooked to virtual Pin 2 (V2)
+5. Add a Guage that will show you the Signal Strength (V0) minVal=  0 MaxVal =-100
+6. Add a RTC Widget (Real Time Clock) hook to V15
+7. Start the project and Enjoy
+*/
+
 #include <ESP8266WiFi.h>       
 #include <WiFiManager.h>         
 #include <ESP8266HTTPUpdateServer.h>    
@@ -13,7 +23,7 @@ WidgetRTC rtc;
 BLYNK_ATTACH_WIDGET(rtc, V15);
 WidgetTerminal terminal(V2);
  
-char auth[] = "...";
+char auth[] = "[BlynkToken]";
 const char* host = "MyCoolESP";
 const char* ssid = "";
 const char* passphrase = "";
@@ -30,7 +40,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   httpServer.handleClient();
   Blynk.run();
 }
