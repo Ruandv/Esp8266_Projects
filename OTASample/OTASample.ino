@@ -23,7 +23,7 @@ WidgetRTC rtc;
 BLYNK_ATTACH_WIDGET(rtc, V15);
 WidgetTerminal terminal(V2);
  
-char auth[] = "[BlynkToken]";
+char auth[] = "78c13d0a5fbf490fa4ff6aa2e9ffe62d";
 const char* host = "MyCoolESP";
 const char* ssid = "";
 const char* passphrase = "";
@@ -45,7 +45,8 @@ void loop() {
 }
 
 void SetPinModes(){
-  
+  pinMode(12,OUTPUT);
+  digitalWrite(12,LOW); 
 }
 
 void SetupOTA(){
